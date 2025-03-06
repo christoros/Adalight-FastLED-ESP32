@@ -8,20 +8,11 @@ jobs:
 
     strategy:
       matrix:
-        board: ["Arduino Uno", "Arduino Nano", "Arduino Leonardo", "Arduino Mega 2560"]
+        board: ["ESP32 Dev Module"]
         include:
-          - board: "Arduino Uno"  # board name, human-readable (matching board array above)
-            platform: "arduino:avr"  # board platform, to be installed by the CLI
-            fqbn: "arduino:avr:uno"  # fully qualified board name
-          - board: "Arduino Nano"
-            platform: "arduino:avr"
-            fqbn: "arduino:avr:nano:cpu=atmega328"
-          - board: "Arduino Leonardo"
-            platform: "arduino:avr"
-            fqbn: "arduino:avr:leonardo"
-          - board: "Arduino Mega 2560"
-            platform: "arduino:avr"
-            fqbn: "arduino:avr:mega:cpu=atmega2560"
+          - board: "ESP32 Dev Module"
+            platform: "esp32:esp32"
+            fqbn: "esp32:esp32:esp32"
 
     steps:
       - name: Checkout
@@ -39,4 +30,4 @@ jobs:
         run: arduino-cli lib install FastLED
 
       - name: Compile Sketch
-        run: arduino-cli compile --fqbn ${{ matrix.fqbn }} Arduino/LEDstream_FastLED/LEDstream_FastLED.ino
+        run: arduino-cli compile --fqbn ${{ matrix.fqbn }} Arduino/LEDstream_esp32/LEDstream_esp32.ino
