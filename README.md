@@ -1,5 +1,5 @@
 # Adalight-FastLED
-[![Build Status](https://github.com/dmadison/Adalight-FastLED/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/dmadison/Adalight-FastLED/actions?query=workflow%3Abuild)
+[![Build Status](https://github.com/christoros/Adalight-FastLED-ESP32/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/christoros/Adalight-FastLED-ESP32/actions?query=workflow%3Abuild)
 
 ![Adalight-Rainbow](http://i.imgur.com/sHygxq9.jpg)
 
@@ -13,15 +13,15 @@ For this sketch to work, you'll need to have a copy of the FastLED library. You 
 
 For more information on my own ambilight setup, see [the project page](https://www.partsnotincluded.com/diy-ambilight-ws2812b/) on [PartsNotIncluded.com](http://www.partsnotincluded.com/).
 
+This fork is specifically made to be able to use with ESP32 devices.
+
 ## Basic Setup
 
-Open the LEDstream_FastLED file in the Arduino IDE and customize the settings at the top for your setup. You will need to change:
+Open the LEDstream_esp32 file in the Arduino IDE and customize the settings at the top for your setup. You will need to change:
 
 - Number of LEDs
 - LED data pin
 - LED type
-
-If you are using a 4-wire LED chipset like APA102 or SK9822, you will need to uncomment the `PIN_CLOCK` line and set that as well.
 
 Upload to your Arduino and use a corresponding PC application to stream color data. You can get the Processing files from the [main Adalight repository](https://github.com/adafruit/Adalight), though I would recommend using Patrick Siegler's fork of Lightpacks's Prismatik, which you can find [here](https://github.com/psieg/Lightpack/releases).
 
